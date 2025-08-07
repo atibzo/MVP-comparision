@@ -11,7 +11,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   const { variants } = req.body;
 
-  const browser = await puppeteer.launch({ headless: "new" });
+const browser = await puppeteer.launch({ headless: true });
 
   const results = await Promise.all(
     variants.map(async ({ name, url }: { name: string; url: string }) => {
